@@ -1,0 +1,52 @@
+<!-- The template to be demonstrated/tested -->
+<script type="text/stache" id="demo" can-autorender>
+  <can-import from="file-droplet" />
+
+<style>
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+file-droplet {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+</style>
+
+  <file-droplet>
+    <h1>Drag and drop some files onto this window.</h1>
+    <h2>List of Files</h2>
+    <ul>
+      {{#each files}}
+        <li>
+          <span>{{name}}</span>
+          <span>{{extension}}</span>
+        </li>
+      {{/each}}
+    </ul>
+
+    <h2>List of Extensions</h2>
+    <ul>
+      {{#each fileTypes}}
+        <li>
+          {{.}}
+        </li>
+      {{/each}}
+    </ul>
+  </file-droplet>
+  
+</script>
+
+<!-- The data for the above template. -->
+<script src='../node_modules/steal/steal.js'
+        main="can/view/autorender/">
+
+  import can from "can";
+  import $ from "jquery";
+
+  $("#demo").viewModel().attr({});
+</script>

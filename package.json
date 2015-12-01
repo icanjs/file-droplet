@@ -1,0 +1,55 @@
+{
+  "name": "file-droplet",
+  "version": "0.0.1",
+  "description": "A CanJS Component that enables live-bound file drag-and-drop-ability to its contents.",
+  "main": "src/file-droplet.js",
+  "scripts": {
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "jshint": "jshint src/file-droplet.js",
+    "testee": "testee tests/test.html --browsers firefox",
+    "test": "npm run jshint && npm run testee",
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://marshallswain@github.com/marshallswain/file-droplet.git"
+  },
+  "keywords": [
+    "CanJS",
+    "Stache"
+  ],
+  "author": "Marshall Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marshallswain/file-droplet/issues"
+  },
+  "homepage": "https://github.com/marshallswain/file-droplet",
+  "system": {
+    "main": "file-droplet",
+    "npmIgnore": [
+      "documentjs"
+    ],
+    "transpiler": "babel",
+    "directories": {
+      "lib": "src"
+    }
+  },
+  "dependencies": {
+    "can": "*",
+    "drag-and-drop-files": "0.0.1",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "ramda": "^0.18.0",
+    "steal": "^0.12.3",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.12.1",
+    "testee": "^0.2.2"
+  },
+  "jshintConfig": {
+    "esnext": true
+  }
+}
