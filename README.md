@@ -48,7 +48,7 @@ Using CanJS's built-in support for StealJS, you can now import the module direct
 </file-droplet>
 ```
 
-![file-droplet component demonstration](http://www.gfycat.com/PossibleDisgustingBlackbuck)
+![demo](https://cloud.githubusercontent.com/assets/128857/11509585/1cd60b84-981c-11e5-9650-391e4b046181.gif)
 
 ## Usage
 The file-droplet component is meant to be used as a wrapper for content in your stache templates.  It will allow you to drag and drop files inside its borders and provides live-bound attributes that you can utilize to list and process files.  A couple of possible use cases include a file-upload component or the [file-router](https://www.npmjs.com/package/file-router) component.  See the API, below, for the list of attributes that you can use.
