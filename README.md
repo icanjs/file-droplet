@@ -31,7 +31,17 @@ Using CanJS's built-in support for StealJS, you can now import the module direct
   <ul>
     {{#each fileTypes}}
       <li>
-        {{.}}
+        <!-- %key is the file extension. -->
+        {{%key}}
+
+        <ul>
+          {{#each .}}
+            <li>
+              <span>{{name}}</span>
+              <span>{{extension}}</span>
+            </li>
+          {{/each}}
+        </ul>
       </li>
     {{/each}}
   </ul>
