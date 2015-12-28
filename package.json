@@ -1,6 +1,6 @@
 {
   "name": "file-droplet",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A CanJS Component that enables live-bound file drag-and-drop-ability to its contents.",
   "main": "src/file-droplet.js",
   "scripts": {
