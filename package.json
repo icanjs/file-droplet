@@ -12,7 +12,7 @@
     "jshint": "jshint src/file-droplet.js",
     "testee": "testee tests/test.html --browsers firefox",
     "test": "npm run jshint && npm run testee",
-    "build": "node build.js"
+    "build": "steal-tools build"
   },
   "repository": {
     "type": "git",
