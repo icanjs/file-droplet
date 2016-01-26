@@ -39,7 +39,7 @@
   "dependencies": {
     "can": "*",
     "drag-and-drop-files": "0.0.1",
-    "jquery": "^2.1.4"
+    "jquery": "2.1.4"
   },
   "devDependencies": {
     "jshint": "^2.8.0",

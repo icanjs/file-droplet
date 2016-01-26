@@ -14,7 +14,8 @@ export const ViewModel = Map.extend({
      */
     fileTypes: {
       get(){
-        var files = this.attr('files').attr();
+        var files = this.attr('files');
+        var length = this.attr('files.length');
         var fileGroups = {};
 
         function addToList(listName, file){
@@ -23,11 +24,11 @@ export const ViewModel = Map.extend({
           }
           fileGroups[listName].push(file);
         }
-        if (files.length) {
-          files.forEach(function(file){
-            var p = file.name.lastIndexOf('.');
+        if (length) {
+          files.each(function(file){
+            var p = file.attr('name').lastIndexOf('.');
             if (p >= 0) {
-              var ext = file.name.substring(p + 1);
+              var ext = file.attr('name').substring(p + 1);
               addToList(ext, file);
             } else {
               addToList('other', file);
@@ -69,9 +70,19 @@ export default Component.extend({
     init(element){
       var self = this;
       dragAndDrop(element[0], function(files) {
-        // Add all files to the main list.
+        // Wrap each file in a map and add it to the main list.
         var list = self.viewModel.attr('files');
-        list.push.apply(list, files);
+        files.forEach((file, index) => {
+          let item = new can.Map({
+            name: file.name,
+            size: file.size,
+            type: file.type,
+            lastModified: file.lastModified,
+            lastModifiedDate: file.lastModifiedDate,
+            file: file
+          });
+          list.push(item);
+        });
 
         // Add this set of files to the batches.
         var batches = self.viewModel.attr('batches');
